@@ -10,6 +10,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('styles/main.css') }}" />
 
+        <!-- Icons -->
+        <script src="https://kit.fontawesome.com/6b817bc630.js" crossorigin="anonymous"></script>
+
         <!-- Scripts -->
         <script defer src="{{ asset('js/app.js') }}"></script>
     </head>
