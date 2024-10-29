@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Inter Italic';
+    src: url('../storage/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../storage/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-display: swap;
+}

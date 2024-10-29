@@ -1,0 +1,106 @@
+@import "reset.css";
+@import "fonts.css";
+
+:root {
+    --ani-short: all ease-in-out 150ms;
+    --font: 'Inter', sans-serif, system-ui;
+    --shadow: rgba(0, 0, 0, 0.3);
+
+    --text: #0f0800;
+    --background: #fff7eb;
+    --primary: #fb9b13;
+    --secondary: #d8ba97;
+    --accent: #40e0fc;
+    --dark-blue: #12292e;
+}
+* {
+    font-family: 'Inter', sans-serif, system-ui;
+    color: var(--text);
+}
+body, html {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 2rem;
+    }
+}
+header > .app-logo {
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+}
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    will-change: auto;
+    transition: var(--ani-short);
+
+    @media screen and (max-width: 768px) {
+        position: absolute !important;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: -100%;
+        width: 350px;
+        height: 100vh;
+        background-color: var(--dark-blue);
+        align-items: end;
+        justify-content: start;
+        padding-top: 4rem;
+        box-shadow: -4px 0 10px var(--shadow);
+    }
+}
+nav[aria-selected="true"] {
+    @media screen and (max-width: 768px){
+        right: 0;
+    }
+}
+#menu-icon {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    z-index: 10;
+    filter: invert(0);
+    will-change: auto;
+    transition: var(--ani-short);
+}
+#menu-icon[aria-selected='true'] {
+
+}
+.drop-down {
+    position: relative;
+    text-align: right;
+    font-size: 18pt;
+    width: 100%;
+    padding: 1.5rem;
+    font-family: var(--font);
+    font-weight: 600;
+}
+.drop-down-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+.drop-down-menu > .menu-item {
+    padding: .5rem;
+    font-size: 16pt;
+    font-family: var(--font);
+    font-weight: 500;
+}
