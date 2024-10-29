@@ -2,7 +2,7 @@
 @import "fonts.css";
 
 :root {
-    --ani-short: all ease-in-out 150ms;
+    --ani-short: all ease 150ms;
     --font: 'Inter', sans-serif, system-ui;
     --shadow: rgba(0, 0, 0, 0.3);
 
@@ -79,28 +79,52 @@ nav[aria-selected="true"] {
     transition: var(--ani-short);
 }
 #menu-icon[aria-selected='true'] {
-
+    filter: invert(1);
 }
 .drop-down {
     position: relative;
-    text-align: right;
     font-size: 18pt;
     width: 100%;
     padding: 1.5rem;
     font-family: var(--font);
     font-weight: 600;
+    color: var(--background);
+    display: flex;
+    column-gap: 1rem;
+    justify-content: right;
+    align-items: center;
+}
+.drop-down > .fa-solid {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: inline;
+        filter: invert(1);
+        height: 1rem;
+        width: 1rem;
+    }
 }
 .drop-down-menu {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    width: 100%;
-    padding: 0 1.5rem;
+    @media screen and (max-width: 768px) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        width: 100%;
+        padding: 0 1.5rem;
+        overflow: hidden;
+        height: 0;
+        will-change: auto;
+        transition: var(--ani-short);
+    }
+}
+.drop-down-menu[aria-selected='true'] {
+    height: fit-content;
 }
 .drop-down-menu > .menu-item {
     padding: .5rem;
     font-size: 16pt;
     font-family: var(--font);
     font-weight: 500;
+    color: var(--background);
 }
