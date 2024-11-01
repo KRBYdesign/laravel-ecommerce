@@ -54,7 +54,7 @@ nav {
         display: flex;
         flex-direction: column;
         top: 0;
-        right: -100%;
+        right: -120%;
         width: 350px;
         height: 100vh;
         background-color: var(--dark-blue);
