@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('main')
-    Home
+404 Page Not Found
 @endsection
