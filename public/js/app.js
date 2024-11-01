@@ -3,10 +3,20 @@ const sidebarToggle = document.getElementById('menu-icon');
 const menExpand = document.getElementById('men-expand');
 const menMenu = document.getElementById('men-menu')
 const womenExpand = document.getElementById('women-expand');
-const womenMenu = document.getElementById('women-menu')
+const womenMenu = document.getElementById('women-menu');
+const headerLogo = document.querySelector('.app-logo[alt="Header Logo"]');
 
+// handle clicks on the header logo -> home page
+headerLogo.addEventListener('click', () => {
+    console.log('clicked the home logo');
+    window.location.href = '/';
+})
+
+// expand the sidebar
 sidebarToggle.addEventListener('click', toggleSidebar);
 
+// handle clicks on the sidebar drop down elements
+// don't navigate to a new page if the user clicked on the expand icon
 document.getElementById('men-link').addEventListener('click', (click) => {
     let menLocation = menExpand.getBoundingClientRect();
 
@@ -16,13 +26,13 @@ document.getElementById('men-link').addEventListener('click', (click) => {
 
 
 });
-
 document.getElementById('women-link').addEventListener('click', (click) => {
     if (!isMouseEventInElement(click, womenExpand.getBoundingClientRect())) {
          window.location.href = '/shop/women';
     }
 });
 
+// handle the clicks on the expand icons to expand the drop-down menus
 menExpand.addEventListener('click', () => {
     toggleSidebarMenu('men');
 });
