@@ -6,11 +6,28 @@ const womenExpand = document.getElementById('women-expand');
 const womenMenu = document.getElementById('women-menu')
 
 sidebarToggle.addEventListener('click', toggleSidebar);
+
+document.getElementById('men-link').addEventListener('click', (click) => {
+    let menLocation = menExpand.getBoundingClientRect();
+
+    if (!isMouseEventInElement(click, menLocation)) {
+        window.location.href = "/shop/men"
+    }
+
+
+});
+
+document.getElementById('women-link').addEventListener('click', (click) => {
+    if (!isMouseEventInElement(click, womenExpand.getBoundingClientRect())) {
+         window.location.href = '/shop/women';
+    }
+});
+
 menExpand.addEventListener('click', () => {
-    toggleSidebarMenu('men')
+    toggleSidebarMenu('men');
 });
 womenExpand.addEventListener('click', () => {
-    toggleSidebarMenu('women')
+    toggleSidebarMenu('women');
 });
 
 function toggleSidebar() {
@@ -57,4 +74,12 @@ function toggleSidebarMenu(menu) {
         menuToggle.classList.replace('fa-caret-up', 'fa-caret-down')
         // console.log('To status true')
     }
+}
+
+function isMouseEventInElement(event, elementLocation) {
+    if (event.x < elementLocation.left || event.x > elementLocation.right || event.y < elementLocation.top || event.y > elementLocation.bottom) {
+        return false;
+    }
+
+    return true;
 }

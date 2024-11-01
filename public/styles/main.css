@@ -70,13 +70,17 @@ nav[aria-selected="true"] {
     }
 }
 #menu-icon {
-    position: relative;
-    height: 2rem;
-    width: 2rem;
-    z-index: 10;
-    filter: invert(0);
-    will-change: auto;
-    transition: var(--ani-short);
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: inline;
+        position: relative;
+        height: 2rem;
+        width: 2rem;
+        z-index: 10;
+        filter: invert(0);
+        will-change: auto;
+        transition: var(--ani-short);
+    }
 }
 #menu-icon[aria-selected='true'] {
     filter: invert(1);
